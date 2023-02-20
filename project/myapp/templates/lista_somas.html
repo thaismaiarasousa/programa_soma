@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <h1>Lista de somas</h1>
+
+  {% if somas %}
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th>Data</th>
+          <th>Número 1</th>
+          <th>Número 2</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for soma in somas %}
+          <tr>
+            <td>{{ soma.data }}</td>
+            <td>{{ soma.num1 }}</td>
+            <td>{{ soma.num2 }}</td>
+            <td>{{ soma.resultado }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Não há somas registradas.</p>
+  {% endif %}
+{% endblock %}
+
