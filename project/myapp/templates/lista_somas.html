@@ -1,9 +1,12 @@
 {% extends 'main.html' %}
 
 {% block content %}
-  <h1>Lista de somas</h1>
+<div class="container">
+    <h1>Resultado da soma</h1>
+    <p>O resultado da soma é: {{ resultado }}</p>
 
-  {% if somas %}
+    <h2>Registros da Soma</h2>
+    {% if somas %}
     <table class="table table-bordered table-striped">
       <thead class="thead-light">
         <tr>
@@ -27,5 +30,5 @@
   {% else %}
     <p>Não há somas registradas.</p>
   {% endif %}
+  </div>
 {% endblock %}
-

@@ -14,7 +14,8 @@ def somar(request):
         resultado = num1 + num2
         soma = Soma(num1=num1, num2=num2, resultado=resultado)
         soma.save()
-        return render(request, 'resultado.html', {'resultado': resultado})
+        somas = Soma.objects.all()
+        return render(request, 'resultado.html', {'resultado': resultado, 'somas': somas})
     else:
         return render(request, 'home.html')
     
